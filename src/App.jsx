@@ -65,9 +65,11 @@ function App() {
         )}
       </Formik>
       <ul>
-        {fileteredTodos.map((todo) => (
-          <li key={todo.id}>{todo.title}</li>
-        ))}
+        {fileteredTodos.length !== 0 ? (
+          fileteredTodos.map((todo) => <li key={todo.id}>{todo.title}</li>)
+        ) : (
+          <li>No Todos found!</li>
+        )}
       </ul>
     </>
   );
